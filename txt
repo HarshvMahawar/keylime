@@ -1,0 +1,100 @@
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG - Agent Data: {'v': 'L6ISdOXidLfh8wg3OBmR9wc4njY4J23lacfPl4hMg2k=', 'ip': '127.0.0.1', 'port': 9002, 'operational_state': 3, 'public_key': '', 'tpm_policy': '{"mask": "0x400"}', 'meta_data': '{}', 'ima_sign_verification_keys': '', 'revocation_key': '', 'accept_tpm_hash_algs': ['sha512', 'sha384', 'sha256'], 'accept_tpm_encryption_algs': ['ecc', 'rsa'], 'accept_tpm_signing_algs': ['ecschnorr', 'rsassa'], 'supported_version': '2.2', 'ak_tpm': 'ARgAAQALAAUAcgAAABAAFAALCAAAAAAAAQDbCTV+BndhIQrlVaqlwoImzAi6oh1M/8Oihlu+KyY9rS4bq91xhh9CzknltRFmKZZPudB2h2cO/8o8llFRP2tF01SHwFQChJz5HoBKy/7CcK2CBkb8bwm7sOAYpFFmtqywBwF9eQMJzQBObFuqFf24IcdT9AD93sgv4yYXqkBQDgilVYD+bXH63mylzCj8hs/7O2u2E+gvvT+IZBFFPiNkBE8pTM5qlnK000kITVyStejB8quxwNa0gPs5ek0bxJRZcuqgJOmdshp532TAQoMSxMHUFSUorNJQXBkkBoqoI5pqis8gFfqA/UOj4mGGdvjQlfA8Hmfyu0d7OGju4NQt', 'mtls_cert': '-----BEGIN CERTIFICATE-----\nMIIDGzCCAgOgAwIBAgIBADANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDDCRkNDMy\nZmJiMy1kMmYxLTRhOTctOWVmNy03NWJkODFjMDAwMDAwHhcNMjUwMjE4MjA1NjQz\nWhcNMjYwMjE4MjA1NjQzWjAvMS0wKwYDVQQDDCRkNDMyZmJiMy1kMmYxLTRhOTct\nOWVmNy03NWJkODFjMDAwMDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB\nAQDAhCSAtPqoSJFbh/t0Y7cp6RMNe2urS6TxhEVOdkCQye/GySLxsPY6qjFZtARW\nblqIcVqA5kWtfokJn708fID3gbuREF7HEKx0CzI1s4GbHDIt6v72wue2PpZRRKDE\neX1c6zvTckdXk6JCBe0HHj8+ykA+5b5g48NxftvJ64dHMxqbUH6h/snhPRX3tTY1\n5fIg0Fx0AXq9mOtCbnrl0mlkh3vvBmG+ymViPEdT6eS5WX4rTCoMsxzEPgi2Ik7J\nX6OKwY9W4O6r3dXMprtGVyTP1umEQxYYKzNDCYlhDmAEZCIsNERgZ0Mlcy3kq4e9\nhjwvZVvF1+bKHzh7Z3qEBTlTAgMBAAGjQjBAMD4GA1UdEQQ3MDWCCWxvY2FsaG9z\ndIIQbG9jYWxob3N0LmRvbWFpbocEfwAAAYcQAAAAAAAAAAAAAAAAAAAAATANBgkq\nhkiG9w0BAQsFAAOCAQEAMIi1Uu7CL3nKoNz+rEoQUHs1tOZnHvfwv49yvrUMZv7n\n6vG3wo52EQnw+U9dLBP9OXnU4+p+JgvFRnGHU2HkbAnZSR7rm6K7fJxxTZyudmtZ\nSeiXT1+9tFtxElN9YlV/3Bql/uGqcHFu8LLmlSmqEoWuvAOjQiC28pJpZVuXC79y\nKS7m6kn2DS3yxUeG03VhrOb5EOhXq61HYla9Bi22PqFgQKnzn0CA9AaRNf0n51Fj\nq4Fha69DJ/FSa2m+PA9lbNcgFTRzKxQ7fNNJN0BLJo79TpWcAHXuB00uSWKS/zB5\nOO8rNOU3egjV74wHxRsHDKbTkzpeXfqzNy8UaV5W+A==\n-----END CERTIFICATE-----\n', 'hash_alg': '', 'enc_alg': '', 'sign_alg': '', 'agent_id': 'd432fbb3-d2f1-4a97-9ef7-75bd81c00000', 'boottime': '', 'ima_pcrs': [], 'pcr10': '', 'next_ima_ml_entry': 0, 'learned_ima_keyrings': {}, 'verifier_id': 'default', 'attestation_count': 0, 'last_received_quote': 0, 'last_successful_attestation': 0, 'verifier_ip': '127.0.0.1', 'verifier_port': '8881', 'registrar_data': '', 'nonce': 'r2XKU3CxwdxRgaAM11Up', 'b64_encrypted_V': '', 'provide_V': True, 'num_retries': 0, 'pending_event': None, 'ssl_context': <ssl.SSLContext object at 0x7faf19ef2750>}
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG - Attestation Data: {'code': 200, 'status': 'Success', 'results': {'quote': 'r/1RDR4AYACIAC1JESN1HH5AHxcpWIGxL2DpAtSXE5wOAHp8l2zAOgZa6ABRyMlhLVTNDeHdkeFJnYUFNMTFVcAAAAAAFTdDaAAAAAQAAAAABIBkQIwAWNjYAAAABAAsDAAQBACAyUfi/Z4SF7chyKn5PnSpgS5kBSpf5/Zdr9VcMuD6/kQ==:ABQACwEAgS02vRbh2d8RPhMgA+SrHs3mIzj+CmXQLOLDXUSjkHo4uXYdQJwZI9KSSaLMNB2agZ/NH75Bx6XD+fFdoN2dIkqdviPnWJfVA9rTFOsb7brJGCgZ7B+zXbrG44PGVa63QNQVInzOHI81PvnnshwPFfheFJ0MMy86ZE/sP4kkMKhandwmgr0VJMIxiyu9BreBwRqitzMrQL6W1Zd1mtxrFHddD4DT77YEBvN1H5aGe5cigqIE2kx3qdI+KwOc1ssqn34uCkbjVjTrrMMvlDYN39lRK1Ixd1OXQcAV3Fg+/m4Jm/WotjslyR9tWNYnVMMSsJ93TMH0W3RkKLOLKYaU1Q==:AQAAAAsAAwAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABzk5vziAnw6ctj/O6SGL+62YwexZA551fa6L+soNNWkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=', 'hash_alg': 'sha256', 'enc_alg': 'rsa', 'sign_alg': 'rsassa', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwIQkgLT6qEiRW4f7dGO3\nKekTDXtrq0uk8YRFTnZAkMnvxski8bD2OqoxWbQEVm5aiHFagOZFrX6JCZ+9PHyA\n94G7kRBexxCsdAsyNbOBmxwyLer+9sLntj6WUUSgxHl9XOs703JHV5OiQgXtBx4/\nPspAPuW+YOPDcX7byeuHRzMam1B+of7J4T0V97U2NeXyINBcdAF6vZjrQm565dJp\nZId77wZhvsplYjxHU+nkuVl+K0wqDLMcxD4ItiJOyV+jisGPVuDuq93VzKa7Rlck\nz9bphEMWGCszQwmJYQ5gBGQiLDREYGdDJXMt5KuHvYY8L2Vbxdfmyh84e2d6hAU5\nUwIDAQAB\n-----END PUBLIC KEY-----\n', 'ima_measurement_list': '\n10 1234567890abcdef1234567890abcdef12345678 ima-ng sha256:abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890 /usr/bin/bash\n\n', 'ima_measurement_list_entry': 0}}
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG - MB Policy: None
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG - Runtime Policy: {"meta": {"version": 1, "generator": 3, "timestamp": "2025-04-01 18:06:05.189717"}, "release": 0, "digests": {}, "excludes": [], "keyrings": {}, "ima": {"ignored_keyrings": [], "log_hash_alg": "sha1", "dm_policy": null}, "ima-buf": {}, "verification-keys": ""}
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG - Recording new attestation entry for agentxy d432fbb3-d2f1-4a97-9ef7-75bd81c00000 on filesystem persistent store
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.105 - keylime.durable_attestation_persistent_store - DEBUG -
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  TESTING2
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.106 - keylime.durable_attestation_persistent_store - DEBUG -
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  TESTING1
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.122 - keylime.tpm - INFO - Checking IMA measurement list on agent: d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.122 - keylime.tpm - DEBUG - IMA measurement list of agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000 validated
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.124 - keylime.cloudverifier_common - DEBUG - received data for agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000, quote: r/1RDR4AYACIAC1JESN1HH5AHxcpWIGxL2DpAtSXE5wOAHp8l2zAOgZa6ABR5QllSdExtSDZHbENGaFdpSUVQRwAAAAABNTqYAAAAAQAAAAABIBkQIwAWNjYAAAABAAsDAAQBACAyUfi/Z4SF7chyKn5PnSpgS5kBSpf5/Zdr9VcMuD6/kQ==:ABQACwEAinfNZFu3ptNRPpcRVybRdu9yvNOHUMpQ7AFunjwELbVcqs/PGVJOclqR4Aemzo5VDIJXDn5eeQGkxEw8ttBgrawbpcnpqLCbXRL02CCi0KjiC+W7HmZ2uwLyhEAsJp1GlCCthX5Jv9Drgov/cdnhmdHPouMFke78L61RWqZvc/lGyLWzV0qKMl5+7XNuQ4tJGSIsXmxlnz4G+OqP/kQ5yLR9rhyiHRpwj16xIb8D5B2B6SLyf9/scpLbIJ8wTKQayf3gi5RBypZ/22CW9PajbJMWjrG6fuPemmsCUcft5i8DeeQEH+t0kzwD8ECNsq+q8NW0MvOmkraDL7tAHkgl8w==:AQAAAAsAAwAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABzk5vziAnw6ctj/O6SGL+62YwexZA551fa6L+soNNWkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=, nonce: yBYRtLmH6GlCFhWiIEPG, public key(b64): LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF3SVFrZ0xUNnFFaVJXNGY3ZEdPMwpLZWtURFh0cnEwdWs4WVJGVG5aQWtNbnZ4c2tpOGJEMk9xb3hXYlFFVm01YWlIRmFnT1pGclg2SkNaKzlQSHlBCjk0RzdrUkJleHhDc2RBc3lOYk9CbXh3eUxlcis5c0xudGo2V1VVU2d4SGw5WE9zNzAzSkhWNU9pUWdYdEJ4NC8KUHNwQVB1VytZT1BEY1g3YnlldUhSek1hbTFCK29mN0o0VDBWOTdVMk5lWHlJTkJjZEFGNnZaanJRbTU2NWRKcApaSWQ3N3daaHZzcGxZanhIVStua3VWbCtLMHdxRExNY3hENEl0aUpPeVYramlzR1BWdUR1cTkzVnpLYTdSbGNrCno5YnBoRU1XR0NzelF3bUpZUTVnQkdRaUxEUkVZR2RESlhNdDVLdUh2WVk4TDJWYnhkZm15aDg0ZTJkNmhBVTUKVXdJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==, ima_measurement_list: False, ima_measurement_list_entry: 0, measured_boot_log: False, boottime: 12345
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.130 - keylime.file_signatures - ERROR - JSON from string is not a valid IMA Keyring : 'keyids' is a required property
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: Failed validating 'required' in schema:
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     {'type': 'object',
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:      'required': ['keyids', 'pubkeys'],
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:      'properties': {'meta': {'type': 'object',
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                              'required': ['version'],
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                              'properties': {'version': {'type': 'integer',
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                                                         'minimum': 1}}},
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                     'keyids': {'type': 'array',
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                                'items': {'type': 'integer'}},
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                     'pubkeys': {'type': 'array',
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:                                 'items': {'type': 'string'}}}}
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: On instance:
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     {}
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.133 - keylime.durable_attestation_persistent_store - DEBUG -
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  --- TPM CHECK1 ---
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.133 - keylime.durable_attestation_persistent_store - DEBUG - {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "recoverable": false,
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "highest_severity": "emergency",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "events": [
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "event_id": "qoute_validation.quote_validation",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "severity": "emergency",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "context": {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:         "message": "Validation of clockinfo from quote using tpm2-tools",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:         "data": "clock timestamp did issued by TPM did not increase between two consecutive quotes"
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       },
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "recoverable": false
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     }
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   ]
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: }
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.135 - keylime.durable_attestation_persistent_store - DEBUG -
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  --- TPM CHECK2 ---
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.135 - keylime.durable_attestation_persistent_store - DEBUG -
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  HERE
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:  
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.135 - keylime.durable_attestation_persistent_store - DEBUG - {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "recoverable": false,
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "highest_severity": "emergency",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   "events": [
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "event_id": "qoute_validation.quote_validation",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "severity": "emergency",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "context": {
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:         "message": "Validation of clockinfo from quote using tpm2-tools",
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:         "data": "clock timestamp did issued by TPM did not increase between two consecutive quotes"
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       },
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:       "recoverable": false
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     }
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   ]
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: }
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.136 - keylime.verifier - ERROR - 'Failure' object has no attribute 'is_failure'
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: Traceback (most recent call last):
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   File "/usr/local/lib/python3.12/site-packages/keylime-7.12.1-py3.12.egg/keylime/cloud_verifier_tornado.py", line 1566, in invoke_get_quote
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     rmc.record_create(agent, json_response, mb_policy, runtime_policy)
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   File "/usr/local/lib/python3.12/site-packages/keylime-7.12.1-py3.12.egg/keylime/da/examples/file.py", line 182, in record_create
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     keylime_ear()
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   File "/usr/local/lib/python3.12/site-packages/keylime-7.12.1-py3.12.egg/keylime/keylimetpm.py", line 542, in keylime_ear
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     result = build_keylime_submod(
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:              ^^^^^^^^^^^^^^^^^^^^^
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:   File "/usr/local/lib/python3.12/site-packages/keylime-7.12.1-py3.12.egg/keylime/keylimetpm.py", line 416, in build_keylime_submod
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:     if not failure.is_failure():
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]:            ^^^^^^^^^^^^^^^^^^
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: AttributeError: 'Failure' object has no attribute 'is_failure'
+May 24 00:09:35 SuperComp07 keylime_verifier[170068]: 2025-05-24 00:09:35.174 - keylime.verifier - WARNING - Agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000 failed, stopping polling

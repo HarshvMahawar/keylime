@@ -129,12 +129,65 @@ class RecordManagement(BaseRecordManagement):
         record_object = {}
 
         self.record_signature_create(record_object, agent_data, attestation_data, service, signed_attributes)
+        
+        # logger.debug("\n \n \n \n TESTING2 \n \n \n \n")
+        # logger.debug("Agent Data: %s", agent_data)
+        # logger.debug("Attestation Data: %s", attestation_data)
+        # logger.debug("MB Policy: %s", mb_policy_data if mb_policy_data else "None")
+        # logger.debug("Runtime Policy: %s", runtime_policy_data if runtime_policy_data else "None")
+
 
         logger.debug(
-            "Recording new %s entry for agent %s on filesystem persistent store",
+            "Recording new %s entry for agentxy %s on filesystem persistent store",
             self.get_record_type(service),
             agent_data["agent_id"],
         )
+
+        #
+        # print("\n \n \n \n TESTING \n \n \n \n")
+        # logger.debug("\n \n \n \n TESTING - FIRST \n \n \n \n")
+        # from keylime.keylime_submod import build_keylime_submod
+        # build_keylime_submod(
+        #     agent_data=agent_data,
+        #     attestation_data=attestation_data,
+        #     mb_policy_data=mb_policy_data,
+        #     runtime_policy=runtime_policy_data
+        # )
+
+        # import json
+        # from pathlib import Path
+
+        # def safe_serialize(obj):
+        #     """Recursively converts non-serializable fields to strings."""
+        #     if isinstance(obj, dict):
+        #         return {k: safe_serialize(v) for k, v in obj.items()}
+        #     elif isinstance(obj, list):
+        #         return [safe_serialize(v) for v in obj]
+        #     else:
+        #         try:
+        #             json.dumps(obj)  # test serialization
+        #             return obj
+        #         except (TypeError, OverflowError):
+        #             return str(obj)  # fallback: stringify the object
+
+        # # Clean the data before saving
+        # debug_dump = {
+        #     "agent_data": safe_serialize(agent_data),
+        #     "attestation_data": safe_serialize(attestation_data),
+        #     "mb_policy": safe_serialize(mb_policy_data),
+        #     "runtime_policy": safe_serialize(runtime_policy_data),
+        # }
+
+        # debug_file_path = Path("/var/tmp/keylime_debug_input2.json")
+
+        # try:
+        #     with open(debug_file_path, "w") as f:
+        #         json.dump(debug_dump, f, indent=2)
+        # except Exception as e:
+        #     print(f"Failed to write debug file: {e}")
+        
+        # keylime_ear()
+
         with open(
             f'{self.file_path}/{self.file_prefix}_{self.get_record_type(service)}_{agent_data["agent_id"]}.{self.rcd_fmt}',
             "ab",
@@ -148,3 +201,4 @@ class RecordManagement(BaseRecordManagement):
                 )
             )
             fp.write(self.line_sep)
+

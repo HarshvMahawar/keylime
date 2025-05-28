@@ -1,0 +1,100 @@
+May 26 23:54:34 SuperComp07 keylime_verifier[204859]: SystemExit: 0
+May 26 23:54:34 SuperComp07 systemd[1]: keylime_verifier.service: Deactivated successfully.
+May 26 23:54:34 SuperComp07 systemd[1]: Stopped keylime_verifier.service - The Keylime verifier.
+May 26 23:54:34 SuperComp07 systemd[1]: Started keylime_verifier.service - The Keylime verifier.
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: INFO:keylime.config:Reading configuration from ['/etc/keylime/logging.conf']
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.431 - keylime.config - INFO - Reading configuration from ['/etc/keylime/verifier.conf']
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.431 - keylime.failure - INFO - Severity configuration set
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.431 - keylime.keylime_db - INFO - database_url is set, using it to establish database connection
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.431 - keylime.keylime_db - INFO - database_url is set as 'sqlite' keyword, using default values to establish database connection
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.437 - keylime.durable_attestation - INFO - The "Durable Attestion" feature is stil experimental and might change in the future
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.437 - keylime.durable_attestation - DEBUG - Persistent store module keylime.da.examples.file imported for "Durable Attestation"
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.525 - keylime.keylime_db - INFO - database_url is set, using it to establish database connection
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.525 - keylime.keylime_db - INFO - database_url is set as 'sqlite' keyword, using default values to establish database connection
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.526 - alembic.env - INFO - Migrating database cloud_verifier
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.526 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.526 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.534 - keylime.measured_boot - DEBUG - mba.elchecking.elchecker: policy names = ['accept-all', 'reject-all']
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.538 - keylime.keylime.cmd_exec - DEBUG - Executing command "tpm2_startup --version"
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.543 - keylime.elparsing - DEBUG - mba.elparser.tpm2_tools_elparser: TPM2-TOOLS 5.6 detected.
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.543 - keylime.verifier - WARNING - The configuration upgrade templates path /usr/share/keylime/templates does not exist
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Agent ids in db loaded from file: [('d432fbb3-d2f1-4a97-9ef7-75bd81c00000',)]
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Starting Cloud Verifier (tornado) on port 8881, use <Ctrl-C> to stop
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Current API version 2.3
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Supported older API versions: 1.0, 2.0, 2.1, 2.2
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Deprecated API versions (soon to be removed): 1.0
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Setting up TLS...
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.config - INFO - Reading configuration from ['/etc/keylime/ca.conf']
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.ca-util - WARNING - Using 'default' password option from CA configuration file
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.556 - keylime.verifier - INFO - Existing CA certificate found in /var/lib/keylime/cv_ca, not generating a new one
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.557 - keylime.verifier - DEBUG - Existing server certificate and key found in /var/lib/keylime/cv_ca, not generating a new ones
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.557 - keylime.verifier - DEBUG - Existing client certificate and key found in /var/lib/keylime/cv_ca, not generating a new ones
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.557 - keylime.verifier - INFO - Using default server_cert option for verifier
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.557 - keylime.verifier - INFO - Using default server_key option for verifier
+May 26 23:54:35 SuperComp07 keylime_verifier[205023]: 2025-05-26 23:54:35.557 - keylime.verifier - INFO - No value provided in server_key_password option for verifier, assuming the key is unencrypted
+May 26 23:54:35 SuperComp07 keylime_verifier[205026]: 2025-05-26 23:54:35.567 - keylime.verifier - INFO - Starting server of process 0
+May 26 23:54:35 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:35.567 - keylime.verifier - INFO - Starting server of process 1
+May 26 23:54:35 SuperComp07 keylime_verifier[205026]: 2025-05-26 23:54:35.574 - keylime.verifier - INFO - Using default client_cert option for verifier
+May 26 23:54:35 SuperComp07 keylime_verifier[205026]: 2025-05-26 23:54:35.574 - keylime.verifier - INFO - Using default client_key option for verifier
+May 26 23:54:35 SuperComp07 keylime_verifier[205026]: 2025-05-26 23:54:35.574 - keylime.verifier - INFO - No value provided in client_key_password option for verifier, assuming the key is unencrypted
+May 26 23:54:37 SuperComp07 keylime_verifier[205026]: 2025-05-26 23:54:37.430 - keylime.verifier - INFO - DELETE returning 200 response for agent id: d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.804 - keylime.verifier - INFO - Using default client_cert option for verifier
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.804 - keylime.verifier - INFO - Using default client_key option for verifier
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.804 - keylime.verifier - INFO - No value provided in client_key_password option for verifier, assuming the key is unencrypted
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.814 - keylime.verifier - INFO - POST returning 200 response for adding agent id: d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.840 - keylime.verifier - DEBUG - IMA policy named d432fbb3-d2f1-4a97-9ef7-75bd81c00000, with checksum 2be2448c1383042cc79fe627cc326d8ff13d9e82d9b3dc043091508c4c4a531f, used by agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000 is not present on policy cache on this verifier, performing SQLAlchemy load
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.870 - keylime.durable_attestation - DEBUG - No attributes specified to be signed. Will skip signing of data referring to agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.870 - keylime.durable_attestation - DEBUG - No Time Stamp Authority URL specified, will not create a timestamp for  data referring to agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.871 - keylime.durable_attestation - DEBUG - No attributes specified to be signed. Will skip timestamping the signing of data referring to agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.871 - keylime.durable_attestation_persistent_store - DEBUG - Recording new attestation entry for agentxy d432fbb3-d2f1-4a97-9ef7-75bd81c00000 on filesystem persistent store
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.872 - keylime.durable_attestation_persistent_store - DEBUG -
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  TESTING - FIRST
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.872 - keylime.durable_attestation_persistent_store - DEBUG - RTP = {"meta": {"version": 1, "generator": 3, "timestamp": "2025-04-01 18:06:05.189717"}, "release": 0, "digests": {}, "excludes": [], "keyrings": {}, "ima": {"ignored_keyrings": [], "log_hash_alg": "sha1", "dm_policy": null}, "ima-buf": {}, "verification-keys": ""}
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.877 - keylime.tpm - INFO - Checking IMA measurement list on agent: d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.878 - keylime.ima - ERROR - IMA ERRORS: Some entries couldn't be validated. Number of failures in modes: ImaNg 1.
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.878 - keylime.cloudverifier_common - DEBUG - received data for agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000, quote: r/1RDR4AYACIAC1JESN1HH5AHxcpWIGxL2DpAtSXE5wOAHp8l2zAOgZa6ABRTOFBPVm04cWpWbnlvRWVzZU51SQAAAAAHpDsvAAAAAQAAAAABIBkQIwAWNjYAAAABAAsDAAQBACAyUfi/Z4SF7chyKn5PnSpgS5kBSpf5/Zdr9VcMuD6/kQ==:ABQACwEAjqZF0rMHM3ay/7K57N7SokLhUZCDhRJVtIgHvB4vJPPY4+lQAzGXLdyh9DVWg+wCmLa/Hhj1rZV3Hr/nrCyzX98Xd8a+bugvbkLLjuN82EiPOg2zzqztcymiG580kR9+dKJY/YjqLAu9uqyK3XE/9sjX0RM0oq4OLTCeh99Cihwluo/VLEfk3mH3Oag95gsQR9u1V4O45VckTvFvD/Piy02AE7MlLxqGrOJ6YxJoHPKVrtR54co449c7aFOKv10h38jC6oWeBYNslP9/78m/iFKeK+g5UmwdO+0C4YfZwOxh6pjQaWvThxy+3Vk9ZhM1S74lcS3HvmCozjNmzt2khA==:AQAAAAsAAwAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABzk5vziAnw6ctj/O6SGL+62YwexZA551fa6L+soNNWkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=, nonce: S8POVm8qjVnyoEeseNuI, public key(b64): LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF3SVFrZ0xUNnFFaVJXNGY3ZEdPMwpLZWtURFh0cnEwdWs4WVJGVG5aQWtNbnZ4c2tpOGJEMk9xb3hXYlFFVm01YWlIRmFnT1pGclg2SkNaKzlQSHlBCjk0RzdrUkJleHhDc2RBc3lOYk9CbXh3eUxlcis5c0xudGo2V1VVU2d4SGw5WE9zNzAzSkhWNU9pUWdYdEJ4NC8KUHNwQVB1VytZT1BEY1g3YnlldUhSek1hbTFCK29mN0o0VDBWOTdVMk5lWHlJTkJjZEFGNnZaanJRbTU2NWRKcApaSWQ3N3daaHZzcGxZanhIVStua3VWbCtLMHdxRExNY3hENEl0aUpPeVYramlzR1BWdUR1cTkzVnpLYTdSbGNrCno5YnBoRU1XR0NzelF3bUpZUTVnQkdRaUxEUkVZR2RESlhNdDVLdUh2WVk4TDJWYnhkZm15aDg0ZTJkNmhBVTUKVXdJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==, ima_measurement_list: True, ima_measurement_list_entry: 0, measured_boot_log: False, boottime: 0
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.879 - keylime.durable_attestation_persistent_store - ERROR - Error verifying quote: string indices must be integers, not 'str'
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.879 - keylime.durable_attestation_persistent_store - DEBUG - --- Failure after validations ---
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.879 - keylime.durable_attestation_persistent_store - DEBUG - {
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:   "recoverable": false,
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:   "highest_severity": "emergency",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:   "events": [
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:     {
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "event_id": "ima.validation.ima_hash",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "severity": "emergency",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "context": {
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:         "message": "IMA template hash does not match the calculated hash.",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:         "expected": "b'\\x124Vx\\x90\\xab\\xcd\\xef\\x124Vx\\x90\\xab\\xcd\\xef\\x124Vx'",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:         "got": "b'(\\x00\\x00\\x00sha256:\\x00\\xab\\xcd\\xef\\x124Vx\\x90\\xab\\xcd\\xef\\x124Vx\\x90\\xab\\xcd\\xef\\x124Vx\\x90\\xab\\xcd\\xef\\x124Vx\\x90\\x0e\\x00\\x00\\x00/usr/bin/bash\\x00'"
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       },
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "recoverable": true
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:     },
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:     {
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "event_id": "qoute_validation.exception",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "severity": "emergency",
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "context": {
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:         "message": "Exception during process_quote_validation: string indices must be integers, not 'str'"
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       },
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:       "recoverable": false
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:     }
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:   ]
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: }
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.880 - keylime.durable_attestation_persistent_store - DEBUG -
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  TESTING - MAIN
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]:  
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.880 - keylime.durable_attestation_persistent_store - DEBUG - trust_vector = {'instance_identity': 'TRUSTWORTHY_INSTANCE', 'hardware': 'GENUINE_HARDWARE', 'executables': 'UNRECOGNIZED_RUNTIME', 'configuration': 'NO_CONFIG_VULNS'}
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.880 - keylime.cloudverifier_common - DEBUG - received data for agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000, quote: r/1RDR4AYACIAC1JESN1HH5AHxcpWIGxL2DpAtSXE5wOAHp8l2zAOgZa6ABRTOFBPVm04cWpWbnlvRWVzZU51SQAAAAAHpDsvAAAAAQAAAAABIBkQIwAWNjYAAAABAAsDAAQBACAyUfi/Z4SF7chyKn5PnSpgS5kBSpf5/Zdr9VcMuD6/kQ==:ABQACwEAjqZF0rMHM3ay/7K57N7SokLhUZCDhRJVtIgHvB4vJPPY4+lQAzGXLdyh9DVWg+wCmLa/Hhj1rZV3Hr/nrCyzX98Xd8a+bugvbkLLjuN82EiPOg2zzqztcymiG580kR9+dKJY/YjqLAu9uqyK3XE/9sjX0RM0oq4OLTCeh99Cihwluo/VLEfk3mH3Oag95gsQR9u1V4O45VckTvFvD/Piy02AE7MlLxqGrOJ6YxJoHPKVrtR54co449c7aFOKv10h38jC6oWeBYNslP9/78m/iFKeK+g5UmwdO+0C4YfZwOxh6pjQaWvThxy+3Vk9ZhM1S74lcS3HvmCozjNmzt2khA==:AQAAAAsAAwAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABzk5vziAnw6ctj/O6SGL+62YwexZA551fa6L+soNNWkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=, nonce: S8POVm8qjVnyoEeseNuI, public key(b64): LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF3SVFrZ0xUNnFFaVJXNGY3ZEdPMwpLZWtURFh0cnEwdWs4WVJGVG5aQWtNbnZ4c2tpOGJEMk9xb3hXYlFFVm01YWlIRmFnT1pGclg2SkNaKzlQSHlBCjk0RzdrUkJleHhDc2RBc3lOYk9CbXh3eUxlcis5c0xudGo2V1VVU2d4SGw5WE9zNzAzSkhWNU9pUWdYdEJ4NC8KUHNwQVB1VytZT1BEY1g3YnlldUhSek1hbTFCK29mN0o0VDBWOTdVMk5lWHlJTkJjZEFGNnZaanJRbTU2NWRKcApaSWQ3N3daaHZzcGxZanhIVStua3VWbCtLMHdxRExNY3hENEl0aUpPeVYramlzR1BWdUR1cTkzVnpLYTdSbGNrCno5YnBoRU1XR0NzelF3bUpZUTVnQkdRaUxEUkVZR2RESlhNdDVLdUh2WVk4TDJWYnhkZm15aDg0ZTJkNmhBVTUKVXdJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==, ima_measurement_list: True, ima_measurement_list_entry: 0, measured_boot_log: False, boottime: 0
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.881 - keylime.tpm - INFO - Checking IMA measurement list on agent: d432fbb3-d2f1-4a97-9ef7-75bd81c00000
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.881 - keylime.ima - ERROR - IMA ERRORS: Some entries couldn't be validated. Number of failures in modes: ImaNg 1.
+May 26 23:54:39 SuperComp07 keylime_verifier[205027]: 2025-05-26 23:54:39.913 - keylime.verifier - WARNING - Agent d432fbb3-d2f1-4a97-9ef7-75bd81c00000 failed, stopping polling

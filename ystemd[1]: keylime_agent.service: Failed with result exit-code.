@@ -1,0 +1,17 @@
+● keylime_agent.service - The Keylime compute agent
+     Loaded: loaded (]8;;file://SuperComp07/usr/lib/systemd/system/keylime_agent.service/usr/lib/systemd/system/keylime_agent.service]8;;; [0;1;38;5;185mdisabled[0m; preset: [0;1;38;5;185mdisabled[0m)
+    Drop-In: /etc/systemd/system/keylime_agent.service.d
+             └─]8;;file://SuperComp07/etc/systemd/system/keylime_agent.service.d/10-tcti.conf10-tcti.conf]8;;
+             /usr/lib/systemd/system/service.d
+             └─]8;;file://SuperComp07/usr/lib/systemd/system/service.d/10-timeout-abort.conf10-timeout-abort.conf]8;;
+             /etc/systemd/system/keylime_agent.service.d
+             └─]8;;file://SuperComp07/etc/systemd/system/keylime_agent.service.d/20-rust_log_trace.conf20-rust_log_trace.conf]8;;, ]8;;file://SuperComp07/etc/systemd/system/keylime_agent.service.d/30-measured_boot_location.conf30-measured_boot_location.conf]8;;
+     Active: activating (auto-restart) (Result: exit-code) since Tue 2025-05-20 23:25:26 IST; 52s ago
+    Process: 60920 ExecStart=/usr/bin/keylime_agent [0;1;31m(code=exited, status=1/FAILURE)[0m
+   Main PID: 60920 (code=exited, status=1/FAILURE)
+
+May 20 23:25:26 SuperComp07 keylime_agent[60920]: ERROR:esys:src/tss2-esys/api/Esys_GetCapability.c:307:Esys_GetCapability_Finish() Received a non-TPM Error
+May 20 23:25:26 SuperComp07 keylime_agent[60920]: ERROR:esys:src/tss2-esys/api/Esys_GetCapability.c:108:Esys_GetCapability() Esys Finish ErrorCode (0x000a0008)
+May 20 23:25:26 SuperComp07 keylime_agent[60920]: Error: Tss2 { err: Tss2Error(FormatZero(FormatZeroResponseCode { .0: 655368, error_number: 8, format_selector: false, version: false, tcg_vendor_indicator: false, severity: false })), kind: None, message: "response code not recognized" }
+May 20 23:25:26 SuperComp07 systemd[1]: [0;1;39m[0;1;31m[0;1;39mkeylime_agent.service: Main process exited, code=exited, status=1/FAILURE[0m
+May 20 23:25:26 SuperComp07 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mkeylime_agent.service: Failed with result 'exit-code'.[0m
