@@ -138,7 +138,7 @@ class RecordManagement(BaseRecordManagement):
 
 
         logger.debug(
-            "Recording new %s entry for agentxy %s on filesystem persistent store",
+            "Recording new %s entry for agentxyz %s on filesystem persistent store",
             self.get_record_type(service),
             agent_data["agent_id"],
         )
@@ -146,13 +146,13 @@ class RecordManagement(BaseRecordManagement):
         #
         # print("\n \n \n \n TESTING \n \n \n \n")
         # logger.debug("\n \n \n \n TESTING - FIRST \n \n \n \n")
-        # from keylime.keylime_submod import build_keylime_submod
-        # build_keylime_submod(
-        #     agent_data=agent_data,
-        #     attestation_data=attestation_data,
-        #     mb_policy_data=mb_policy_data,
-        #     runtime_policy=runtime_policy_data
-        # )
+        from keylime.keylime_submod import build_keylime_submod
+        build_keylime_submod(
+            agent_data=agent_data,
+            attestation_data=attestation_data,
+            mb_policy_data=mb_policy_data,
+            runtime_policy=runtime_policy_data
+        )
 
         # import json
         # from pathlib import Path

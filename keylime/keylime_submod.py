@@ -9,6 +9,8 @@ from keylime.ima.types import RuntimePolicyType
 from keylime.common import algorithms
 from keylime.failure import Failure, Component
 from keylime import keylime_logging
+from keylime.validate_tpm import validate_quote_response, validate_quote
+
 logger = keylime_logging.init_logging("durable_attestation_persistent_store")
 
 def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str, Any],
@@ -43,33 +45,8 @@ def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str,
     failure = Failure(Component.QUOTE_VALIDATION)
 
     try:
-        # TPM quote check
-        quote_validation_failure = get_tpm_instance().check_quote(
-            agentAttestState=agent_attest_state,
-            nonce=nonce,
-            data=pubkey,
-            quote=quote,
-            aikTpmFromRegistrar=ak_tpm,
-            tpm_policy=tpm_policy,
-            ima_measurement_list=ima_ml,
-            runtime_policy=runtime_policy_data,
-            ima_keyrings=ima_keyrings,
-            mb_measurement_list=mb_log,
-            mb_policy=mb_refstate_for_check_quote,
-            compressed=False,
-            count=agent_data.get("attestation_count", 0),
-            skip_clock_check=True # skipped for my machine
-        )
-        failure.merge(quote_validation_failure)
-    except Exception as e:
-        logger.error("Error verifying quote: %s", str(e))
-        failure.add_event("exception", {"message": f"Exception during check_quote: {e}"}, False)
-
-    
-
-    try:
         # Process quote response (for detailed validation like algo checks)
-        process_q = process_quote_response(
+        process_q = validate_quote_response(
             agent=agent_data,
             runtime_policy=runtime_policy_data,
             json_response=results,
@@ -83,6 +60,32 @@ def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str,
         logger.error("Error verifying quote: %s", str(e))
         failure.add_event("exception", {"message": f"Exception during process_quote_validation: {e}"}, False)
     
+
+    try:
+        # TPM quote check
+        quote_validation_failure = validate_quote(
+            agentAttestState=agent_attest_state,
+            nonce=nonce,
+            data=pubkey,
+            quote=quote,
+            aikTpmFromRegistrar=ak_tpm,
+            tpm_policy=tpm_policy,
+            ima_measurement_list=ima_ml,
+            runtime_policy=runtime_policy_data,
+            ima_keyrings=ima_keyrings,
+            mb_measurement_list=mb_log,
+            mb_policy=mb_refstate_for_check_quote,
+            compressed=False,
+            count=agent_data.get("attestation_count", 0),
+        )
+        failure.merge(quote_validation_failure)
+    except Exception as e:
+        logger.error("Error verifying quote: %s", str(e))
+        failure.add_event("exception", {"message": f"Exception during check_quote: {e}"}, False)
+
+    
+
+
     logger.debug("--- Failure after validations ---")
     logger.debug(print_failure(failure))
 
@@ -116,7 +119,7 @@ def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str,
         trust_vector["hardware"] = 'GENUINE_HARDWARE'
 
     # Executables (IMA)
-    if any(ev.startswith("ima.validation.not_in_allowlist") or
+    if any((ev.startswith("ima.validation") and ev.endswith("not_in_allowlist")) or
            ev.startswith("ima.validation.runtime_policy_hash") or
            ev.startswith("ima.validation.invalid_signature") for ev in event_ids):
         trust_vector["executables"] = 'UNSAFE_RUNTIME'
