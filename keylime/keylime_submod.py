@@ -46,12 +46,13 @@ def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str,
 
     try:
         # Process quote response (for detailed validation like algo checks)
-        process_q = validate_quote_response(
+        process_q = process_quote_response(
             agent=agent_data,
             runtime_policy=runtime_policy_data,
             json_response=results,
             agentAttestState=agent_attest_state,
             mb_policy=mb_policy_data,
+            no_agent_state_change=True,
         )
         failure.merge(process_q)
         
@@ -61,27 +62,7 @@ def build_keylime_submod(agent_data: Dict[str, Any], attestation_data: Dict[str,
         failure.add_event("exception", {"message": f"Exception during process_quote_validation: {e}"}, False)
     
 
-    try:
-        # TPM quote check
-        quote_validation_failure = validate_quote(
-            agentAttestState=agent_attest_state,
-            nonce=nonce,
-            data=pubkey,
-            quote=quote,
-            aikTpmFromRegistrar=ak_tpm,
-            tpm_policy=tpm_policy,
-            ima_measurement_list=ima_ml,
-            runtime_policy=runtime_policy_data,
-            ima_keyrings=ima_keyrings,
-            mb_measurement_list=mb_log,
-            mb_policy=mb_refstate_for_check_quote,
-            compressed=False,
-            count=agent_data.get("attestation_count", 0),
-        )
-        failure.merge(quote_validation_failure)
-    except Exception as e:
-        logger.error("Error verifying quote: %s", str(e))
-        failure.add_event("exception", {"message": f"Exception during check_quote: {e}"}, False)
+
 
     
 

@@ -37,6 +37,7 @@ def process_quote_response(
     runtime_policy: RuntimePolicyType,
     json_response: Dict[str, Any],
     agentAttestState: AgentAttestState,
+    no_agent_state_change: bool = False,
 ) -> Failure:
     """Validates the response from the Cloud agent.
 
@@ -114,63 +115,8 @@ def process_quote_response(
         )
         return failure
 
-    agent["hash_alg"] = hash_alg
-
-    # Ensure enc_alg is in accept_tpm_encryption_algs list
-    if not enc_alg or not algorithms.is_accepted(enc_alg, agent["accept_tpm_encryption_algs"]):
-        logger.error("TPM Quote for agent %s is using an unaccepted encryption algorithm: %s", agent_id, enc_alg)
-        failure.add_event(
-            "invalid_enc_alg",
-            {"message": f"TPM Quote is using an unaccepted encryption algorithm: {enc_alg}", "data": enc_alg},
-            False,
-        )
-        return failure
-
-    agent["enc_alg"] = enc_alg
-
-    # Ensure sign_alg is in accept_tpm_encryption_algs list
-    if not sign_alg or not algorithms.is_accepted(sign_alg, agent["accept_tpm_signing_algs"]):
-        logger.error("TPM Quote for agent %s is using an unaccepted signing algorithm: %s", agent_id, sign_alg)
-        failure.add_event(
-            "invalid_sign_alg",
-            {"message": f"TPM Quote is using an unaccepted signing algorithm: {sign_alg}", "data": sign_alg},
-            False,
-        )
-        return failure
-
-    agent["sign_alg"] = sign_alg
-
-    if ima_measurement_list_entry == 0:
-        agentAttestState.reset_ima_attestation()
-    elif ima_measurement_list_entry != agentAttestState.get_next_ima_ml_entry():
-        # If we requested a particular entry number then the agent must return either
-        # starting at 0 (handled above) or with the requested number.
-        logger.error(
-            "Agent %s did not respond with requested next IMA measurement list entry %s but started at %s",
-            agent_id,
-            agentAttestState.get_next_ima_ml_entry(),
-            ima_measurement_list_entry,
-        )
-        failure.add_event(
-            "invalid_ima_entry_nb",
-            {
-                "message": "Agent did not respond with requested next IMA measurement list entry",
-                "got": ima_measurement_list_entry,
-                "expected": agentAttestState.get_next_ima_ml_entry(),
-            },
-            False,
-        )
-    elif not agentAttestState.is_expected_boottime(boottime):
-        # agent sent a list not starting at 0 and provided a boottime that doesn't
-        # match the expected boottime, so it must have been rebooted; we would fail
-        # attestation this time so we retry with a full attestation next time.
-        agentAttestState.reset_ima_attestation()
-        return failure
-
-    agentAttestState.set_boottime(boottime)
-
     ima_keyrings = agentAttestState.get_ima_keyrings()
-
+    
     # If ima_sign_verification_keys was provided to agent by tenant directly,
     # use that. Otherwise, find keyring in IMA policy.
     # NOTE: the tenant option for ima_sign_verification_keys is deprecated, and
@@ -183,40 +129,117 @@ def process_quote_response(
     tenant_keyring = file_signatures.ImaKeyring.from_string(verification_key_string)
     ima_keyrings.set_tenant_keyring(tenant_keyring)
 
-    if agent.get("tpm_clockinfo"):
-        agentAttestState.set_tpm_clockinfo(TPMClockInfo.from_dict(agent["tpm_clockinfo"]))
+    if not no_agent_state_change:
 
-    quote_validation_failure = get_tpm_instance().check_quote(
-        agentAttestState,
-        agent["nonce"],
-        received_public_key,
-        quote,
-        agent["ak_tpm"],
-        agent["tpm_policy"],
-        ima_measurement_list,
-        runtime_policy,
-        algorithms.Hash(hash_alg),
-        ima_keyrings,
-        mb_measurement_list,
-        mb_policy,
-        compressed=(agent["supported_version"] == "1.0"),
-        count=agent["attestation_count"],
-    )  # TODO: change this to always False after initial update
-    failure.merge(quote_validation_failure)
+        agent["hash_alg"] = hash_alg
 
-    agent["last_received_quote"] = int(time.time())
+        # Ensure enc_alg is in accept_tpm_encryption_algs list
+        if not enc_alg or not algorithms.is_accepted(enc_alg, agent["accept_tpm_encryption_algs"]):
+            logger.error("TPM Quote for agent %s is using an unaccepted encryption algorithm: %s", agent_id, enc_alg)
+            failure.add_event(
+                "invalid_enc_alg",
+                {"message": f"TPM Quote is using an unaccepted encryption algorithm: {enc_alg}", "data": enc_alg},
+                False,
+            )
+            return failure
 
-    if not failure:
-        agent["attestation_count"] += 1
-        agent["last_successful_attestation"] = int(time.time())
-        agent["tpm_clockinfo"] = agentAttestState.get_tpm_clockinfo().to_dict()
+        agent["enc_alg"] = enc_alg
 
-        # has public key changed? if so, clear out b64_encrypted_V, it is no longer valid
-        if received_public_key != agent.get("public_key", ""):
-            agent["public_key"] = received_public_key
-            agent["b64_encrypted_V"] = ""
-            agent["provide_V"] = True
+        # Ensure sign_alg is in accept_tpm_encryption_algs list
+        if not sign_alg or not algorithms.is_accepted(sign_alg, agent["accept_tpm_signing_algs"]):
+            logger.error("TPM Quote for agent %s is using an unaccepted signing algorithm: %s", agent_id, sign_alg)
+            failure.add_event(
+                "invalid_sign_alg",
+                {"message": f"TPM Quote is using an unaccepted signing algorithm: {sign_alg}", "data": sign_alg},
+                False,
+            )
+            return failure
 
+        agent["sign_alg"] = sign_alg
+
+        if ima_measurement_list_entry == 0:
+            agentAttestState.reset_ima_attestation()
+        elif ima_measurement_list_entry != agentAttestState.get_next_ima_ml_entry():
+            # If we requested a particular entry number then the agent must return either
+            # starting at 0 (handled above) or with the requested number.
+            logger.error(
+                "Agent %s did not respond with requested next IMA measurement list entry %s but started at %s",
+                agent_id,
+                agentAttestState.get_next_ima_ml_entry(),
+                ima_measurement_list_entry,
+            )
+            failure.add_event(
+                "invalid_ima_entry_nb",
+                {
+                    "message": "Agent did not respond with requested next IMA measurement list entry",
+                    "got": ima_measurement_list_entry,
+                    "expected": agentAttestState.get_next_ima_ml_entry(),
+                },
+                False,
+            )
+        elif not agentAttestState.is_expected_boottime(boottime):
+            # agent sent a list not starting at 0 and provided a boottime that doesn't
+            # match the expected boottime, so it must have been rebooted; we would fail
+            # attestation this time so we retry with a full attestation next time.
+            agentAttestState.reset_ima_attestation()
+            return failure
+
+        agentAttestState.set_boottime(boottime)
+
+
+        if agent.get("tpm_clockinfo"):
+            agentAttestState.set_tpm_clockinfo(TPMClockInfo.from_dict(agent["tpm_clockinfo"]))
+
+        quote_validation_failure = get_tpm_instance().check_quote(
+            agentAttestState,
+            agent["nonce"],
+            received_public_key,
+            quote,
+            agent["ak_tpm"],
+            agent["tpm_policy"],
+            ima_measurement_list,
+            runtime_policy,
+            algorithms.Hash(hash_alg),
+            ima_keyrings,
+            mb_measurement_list,
+            mb_policy,
+            compressed=(agent["supported_version"] == "1.0"),
+            count=agent["attestation_count"],
+        )  # TODO: change this to always False after initial update
+        failure.merge(quote_validation_failure)
+
+        agent["last_received_quote"] = int(time.time())
+
+        if not failure:
+            agent["attestation_count"] += 1
+            agent["last_successful_attestation"] = int(time.time())
+            agent["tpm_clockinfo"] = agentAttestState.get_tpm_clockinfo().to_dict()
+
+            # has public key changed? if so, clear out b64_encrypted_V, it is no longer valid
+            if received_public_key != agent.get("public_key", ""):
+                agent["public_key"] = received_public_key
+                agent["b64_encrypted_V"] = ""
+                agent["provide_V"] = True
+
+    else:
+        quote_validation_failure = get_tpm_instance().check_quote(
+            agentAttestState,
+            agent["nonce"],
+            received_public_key,
+            quote,
+            agent["ak_tpm"],
+            agent["tpm_policy"],
+            ima_measurement_list,
+            runtime_policy,
+            algorithms.Hash(hash_alg),
+            ima_keyrings,
+            mb_measurement_list,
+            mb_policy,
+            compressed=(agent["supported_version"] == "1.0"),
+            count=agent["attestation_count"],
+            skip_clock_check=True,
+        )
+        failure.merge(quote_validation_failure)
     # ok we're done
     return failure
 

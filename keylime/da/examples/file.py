@@ -144,14 +144,15 @@ class RecordManagement(BaseRecordManagement):
         )
 
         #
-        # print("\n \n \n \n TESTING \n \n \n \n")
-        # logger.debug("\n \n \n \n TESTING - FIRST \n \n \n \n")
+        print("\n \n \n \n TESTING \n \n \n \n")
+        logger.debug("\n \n \n \n TESTING - FIRST \n \n \n \n")
         from keylime.keylime_submod import build_keylime_submod
         build_keylime_submod(
-            agent_data=agent_data,
-            attestation_data=attestation_data,
-            mb_policy_data=mb_policy_data,
-            runtime_policy=runtime_policy_data
+           agent_data=agent_data,
+           attestation_data=attestation_data,
+        
+        mb_policy_data=mb_policy_data,
+           runtime_policy=runtime_policy_data
         )
 
         # import json

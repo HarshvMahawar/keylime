@@ -220,6 +220,7 @@ class Tpm:
         mb_policy: Optional[str],
         hash_alg: Hash,
         count: int,
+        
     ) -> Failure:
         failure = Failure(Component.PCR_VALIDATION)
 
